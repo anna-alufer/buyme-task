@@ -16,7 +16,7 @@ export default Controller.extend({
           saveTask: function(task){
             
             $.ajax({
-            url: 'http://lara-pro/task-page/save',
+            url: 'http://localhost:8000/task-page/save',
             data: {
                 task_name: task
                 },
@@ -37,7 +37,7 @@ export default Controller.extend({
           deleteTask: function(task_id) {
     
                $.ajax({
-                   url: 'http://lara-pro/task-page/delete',
+                   url: 'http://localhost:8000/task-page/delete',
                    data: {
                     task_id: task_id
                      },
@@ -70,7 +70,7 @@ export default Controller.extend({
 
 
                       $.ajax({
-                        url: 'http://lara-pro/task-page/update',
+                        url: 'http://localhost:8000/task-page/update',
                         data: {
                          task_id: task_id,
                          active: active
@@ -90,7 +90,7 @@ export default Controller.extend({
             
 
             $.ajax({
-                url: 'http://lara-pro/task-page/update-text',
+                url: 'http://localhost:8000/task-page/update-text',
                 data: {
                  task_id: id,
                  task_name: text
