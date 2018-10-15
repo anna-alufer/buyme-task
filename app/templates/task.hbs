@@ -1,0 +1,41 @@
+{{outlet}}
+
+
+<table class="table">
+    <tr class="thead-dark">
+        <th>משימות</th>
+        <th {{action "newTask"}}>+</th>
+    </tr>
+
+        {{#each model as |tasks|}}
+             <tr>
+                 <td><div class="checkbox {{if tasks.active "" "checked"}}" {{action "updateTask" tasks.task_id}} data-id={{tasks.task_id}}>{{input type="text" class="tasks" name="toggleCheckbox" focus-out=(action "saveUpdatedText" tasks.task_name tasks.task_id) value=tasks.task_name}}
+                 
+                 </div></td>
+                 <td {{action "deleteTask" tasks.task_id}}>X</td> 
+            </tr>
+            
+        {{/each}}
+   
+ 
+</table>
+
+
+{{#if isShowingModal}}
+   
+
+     {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    <h3>הוסף משימה חדשה</h3>
+    
+    {{textarea class="new-text" value=taskName cols="80" rows="6"}}
+    <div class="btn">
+        <button type="button" class="save_btn btn btn-dark" {{action "saveTask" taskName}}>שמור</button>
+        <button type="button" class="cancel_btn btn btn-dark" {{action "toggleModal"}}>בטל</button>
+    </div>
+  {{/modal-dialog}}
+{{/if}}
+
+
+

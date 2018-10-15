@@ -1,0 +1,68 @@
+
+
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+
+.ember-modal-dialog{
+    width: 400px;
+    height: 400px;
+}
+
+.ember-view{
+    direction: rtl;
+    width: 350px;
+    margin: auto;
+
+    .new-text{
+        width: 90%!important;
+        display: block;
+    }
+}
+
+h3{
+    text-align: center;
+}
+
+.ember-modal-dialog {
+    width: 350px;
+    height: 320px;
+}
+table, h1{
+    margin: auto;
+    margin-top: 30px;
+    text-align: right;
+
+    .checkbox{
+        display: inline-block;
+
+        &::before{
+            content: "";
+            border: 1px solid black;
+            border-radius: 15%;
+            vertical-align: text-top;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+    
+        &.checked{
+            &::before{
+                background: grey!important;
+            }
+
+            .tasks{
+                text-decoration: line-through;
+                color: grey
+            }
+            
+        }
+
+        .tasks{
+            border: none;
+            margin-right: 30px;
+            color: #000000
+        }
+    
+    }
+    
+}
